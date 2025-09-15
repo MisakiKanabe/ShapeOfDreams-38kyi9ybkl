@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Collection</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img
+          src="./!Icons/steam_icon_2444750.png"
+          alt="Steam Icon"
+          class="brand-icon"
+        />
+        Shape of Dreams
+      </div>
+      <ul class="navbar-links">
+        <li><a href="#" class="active" data-tab="essences">Essences</a></li>
+        <li><a href="#" data-tab="memories">Memories</a></li>
+        <li><a href="#" data-tab="achievements">Achievements</a></li>
+      </ul>
+    </nav>
+
+    <br/>
+    <!-- ESSENCES TAB -->
+    <div class="tab-content active" id="essences">
+      <input
+        type="text"
+        id="searchInputEssences"
+        placeholder="Search Essences..."
+      />
+      <div class="filter-group" id="filterEssences">
+        <label><input type="checkbox" value="Common" /> Common</label>
+        <label><input type="checkbox" value="Rare" /> Rare</label>
+        <label><input type="checkbox" value="Epic" /> Epic</label>
+        <label><input type="checkbox" value="Legendary" /> Legendary</label>
+        <label><input type="checkbox" value="Unique" /> Unique</label>
+      </div>
+      <div class="table-responsive">
+        <table id="data-table-essences">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th data-sort="name">
+                <div>Name<span></span></div>
+              </th>
+              <th>Description</th>
+              <th>Unlock Task</th>
+              <th data-sort="rarity">
+                <div>Rarity<span></span></div>
+              </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- MEMORIES TAB (same structure as Essences) -->
+    <div class="tab-content" id="memories">
+      <input
+        type="text"
+        id="searchInputMemories"
+        placeholder="Search Memories..."
+      />
+      <div class="filter-group" id="filterMemories">
+        <label
+          ><input type="checkbox" name="rarity" value="Common" /> Common</label
+        >
+        <label><input type="checkbox" name="rarity" value="Rare" /> Rare</label>
+        <label><input type="checkbox" name="rarity" value="Epic" /> Epic</label>
+        <label
+          ><input type="checkbox" name="rarity" value="Legendary" />
+          Legendary</label
+        >
+        <label
+          ><input type="checkbox" name="rarity" value="Unique" /> Unique</label
+        >
+        <label
+          ><input type="checkbox" name="rarity" value="Character" />
+          Character</label
+        >
+        <!-- New -->
+      </div>
+
+      <div class="table-responsive">
+        <table id="data-table-memories">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th data-sort="name">
+                <div>Name<span></span></div>
+              </th>
+              <th>Description</th>
+              <th>Unlock Task</th>
+              <th data-sort="rarity">
+                <div>Rarity<span></span></div>
+              </th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ACHIEVEMENTS TAB -->
+    <div class="tab-content" id="achievements">
+      <input
+        type="text"
+        id="searchInputAchievements"
+        placeholder="Search Achievements..."
+      />
+      <div class="filter-group-placeholder"></div>
+      <div class="table-responsive">
+        <table id="data-table-achievements">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+/* ===== Body & Navbar ===== */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: "Inter", "Roboto", sans-serif;
+  margin: 20px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2a2a2a;
+  padding: 8px 16px;
+  font-family: "Inter", "Roboto", sans-serif;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.4rem; /* slightly larger text */
+  gap: 12px; /* more space between icon and text */
+}
+
+.brand-icon {
+  width: 64px; /* bigger icon */
+  height: 64px;
+  object-fit: contain;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* more spacing between tabs */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px; /* more padding for taller links */
+  text-decoration: none;
+  color: #fff;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.navbar-links li a.active,
+.navbar-links li a:hover {
+  background-color: #3b82f6;
+}
+
+/* ===== Tab content ===== */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ===== Inputs & Filters ===== */
+input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 1rem;
+  margin: 0 auto 12px auto;
+  display: block;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  outline: none;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.filter-group label {
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.filter-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #3b82f6;
+}
+
+/* ===== Table Styling ===== */
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed; /* fixed column widths */
+}
+.filter-group,
+.filter-group-placeholder {
+  margin-bottom: 16px; /* same vertical gap as Essences filter */
+  height: 40px; /* ensure Achievements has same vertical space */
+}
+
+.filter-group-placeholder {
+  /* invisible but keeps layout consistent */
+  visibility: hidden;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #2a2a2a;
+  vertical-align: middle;
+  text-align: left;
+}
+
+th {
+  background-color: #2c2c2c;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+th:hover {
+  background-color: #3a3a3a;
+}
+tbody tr:hover {
+  background-color: #2a2a2a;
+}
+
+/* ===== Images ===== */
+.essence-image {
+  max-width: 64px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+/* ===== Column widths ===== */
+th:nth-child(1),
+td:nth-child(1) {
+  width: 5%;
+}
+th:nth-child(2),
+td:nth-child(2) {
+  width: 20%;
+}
+th:nth-child(3),
+td:nth-child(3) {
+  width: 40%;
+}
+th:nth-child(4),
+td:nth-child(4) {
+  width: 25%;
+}
+th:nth-child(5),
+td:nth-child(5) {
+  width: 10%;
+  text-align: center;
+}
+
+/* ===== Sorting Arrows ===== */
+th[data-sort] > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+th[data-sort] span {
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  margin-left: 6px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  padding: 2px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.4;
+}
+
+th[data-sort].asc span {
+  transform: rotate(-135deg);
+  opacity: 1;
+}
+
+th[data-sort].desc span {
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+/* ===== Rarity Colors ===== */
+.rarity-Common {
+  color: #b0b0b0;
+}
+.rarity-Rare {
+  color: #3b82f6;
+}
+.rarity-Epic {
+  color: #8b5cf6;
+}
+.rarity-Legendary {
+  color: #f59e0b;
+}
+.rarity-Unique {
+  color: #ef4444;
+}
+
+/* Text wrap */
+td:nth-child(3),
+td:nth-child(4) {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
